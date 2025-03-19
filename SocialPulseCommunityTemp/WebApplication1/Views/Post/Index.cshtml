@@ -1,0 +1,197 @@
+﻿@using SocialPulseCommunityWeb.Models
+@model IEnumerable<PostModel>
+@{
+    Layout = "~/Views/Shared/_LayoutCustomerPages.cshtml";
+}
+ <div class="container">
+      <div class="navigation">
+        <ul>
+          <li>
+            <a href="#">
+              <span class="icon">
+                <ion-icon name="logo-apple"></ion-icon>
+              </span>
+              <span class="title">Brand Name</span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <span class="icon">
+                <ion-icon name="id-card-outline"></ion-icon>
+              </span>
+              <span class="title">Previous Posts</span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <span class="icon">
+                <ion-icon name="add-circle-outline"></ion-icon>
+              </span>
+              <span class="title">New Post</span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <span class="icon">
+                <ion-icon name="calendar-outline"></ion-icon>
+              </span>
+              <span class="title"> Scheduled Posts</span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <span class="icon">
+                <ion-icon name="stats-chart-outline"></ion-icon>
+              </span>
+              <span class="title">Statistics</span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <span class="icon">
+                <ion-icon name="chatbubble-outline"></ion-icon>
+              </span>
+              <span class="title">Messages</span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <span class="icon">
+                <ion-icon name="logo-paypal"></ion-icon>
+              </span>
+              <span class="title">Payment</span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <span class="icon">
+                <ion-icon name="help-outline"></ion-icon>
+              </span>
+              <span class="title">Help</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="#">
+              <span class="icon">
+                <ion-icon name="settings-outline"></ion-icon>
+              </span>
+              <span class="title">Settings</span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <span class="icon">
+                <span class="iconamoon--profile-thin"></span>
+              </span>
+              <span class="title">Social account</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="#">
+              <span class="icon">
+                <ion-icon name="log-out-outline"></ion-icon>
+              </span>
+              <span class="title">Sign Out</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- ========================= Main ==================== -->
+      <div class="main">
+        <div class="topbar">
+          <div class="toggle">
+            <ion-icon name="menu-outline"></ion-icon>
+          </div>
+          <div class="user">
+            <img src="assets/imgs/customer01.jpg" alt="" />
+          </div>
+        </div>
+        <!-- ======================= social media================== -->
+        <!-- Tab Navigation with Social Media Icons -->
+        <!-- <div class="tab-container">
+          <span onclick="openTab(event, 'facebook')" class="logos--facebook" title="Facebook"></span>
+          <span  onclick="openTab(event, 'instagram')" class="skill-icons--instagram" title="Instagram"></span>
+          <span onclick="openTab(event, 'twitter')"  class="skill-icons--twitter" title="Twitter"></span>
+          <span class="logos--tiktok-icon" title="Tiktok"></span>
+          <span class="devicon--linkedin" title="Linkedin"></span>
+        </div>
+        Tab Content -->
+        <!-- <div id="facebook" class="content active">Welcome to Facebook!</div>
+        <div id="instagram" class="content">Welcome to Instagram!</div>
+        <div id="twitter" class="content">Welcome to Twitter!</div>
+        <div id="linkedin" class="content">Welcome to LinkedIn!</div> -->
+
+        <!-- ======================= filter================== -->
+
+        <div class="header">
+          <div class="filters-container">
+            <div class="filters">
+              <div class="search">
+                <label>
+                  <input type="text" placeholder="Search here" />
+                  <ion-icon name="search-outline"></ion-icon>
+                </label>
+              </div>
+              <select id="dateRange">
+                <option value="day">This Day</option>
+                <option value="week">This Week</option>
+                <option value="month">This Month</option>
+                <option value="year">This Year</option>
+              </select>
+              <select id="socialMedia">
+                <option value="">All Platforms</option>
+                <option value="facebook">
+                  <span class="iconify" data-icon="logos:facebook"></span>
+                  Facebook
+                </option>
+                <option value="instagram">
+                  <span
+                    class="iconify"
+                    data-icon="skill-icons:instagram"
+                  ></span>
+                  Instagram
+                </option>
+                <option value="linkedin">
+                  <span class="iconify" data-icon="devicon:linkedin"></span>
+                  LinkedIn
+                </option>
+                <option value="twitter">
+                  <span class="iconify" data-icon="skill-icons:twitter"></span>
+                  Twitter
+                </option>
+              </select>
+              <select id="Type">
+                <option value="day">Type</option>
+                <option value="week">Photo</option>
+                <option value="month">Video</option>
+              </select>
+            </div>
+            <div class="grid-toggle">
+              <span>Grid View</span>
+              <label class="switch">
+                <input
+                  id="gridSwitch"
+                  type="checkbox"
+                  onchange="toggleView()"
+                />
+                <span class="slider round"></span>
+              </label>
+            </div>
+          </div>
+        </div>
+        <!-- ======================= Cards ================== -->
+        <div class="cardBox" id="cardContainer">
+            @foreach(var post in Model)
+            {
+                @Html.Partial("~/Views/Shared/Post/_post.cshtml",post);
+            }
+        </div>
+        <!-- Post Details (Modal) -->
+        <!-- Post Details Section (NOT a modal, always in layout) -->
+       <!-- Post Details (Modal) -->
+
+      </div>
+    </div>

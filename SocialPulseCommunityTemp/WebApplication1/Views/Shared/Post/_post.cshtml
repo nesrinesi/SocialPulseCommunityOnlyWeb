@@ -1,0 +1,14 @@
+﻿@using SocialPulseCommunityWeb.Models
+@model PostModel
+@{
+    Layout = null;
+}
+
+<div class="card">
+    <img src="@Model.Image" alt="Strawberry Treats">
+    <div class="content">
+        <h3>@Model.Title</h3>
+        <p>@Model.Description</p>
+        <span>@Model.Date</span>
+    </div>
+</div>

@@ -1,0 +1,246 @@
+﻿* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    margin: 0;
+    padding: 0;
+}
+
+
+.card {
+    margin: 0 auto; 
+}
+
+#heading {
+    color: #2c3e50;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.card {
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    margin: 20px;
+}
+
+.form-card {
+    padding: 20px 40px 30px 40px;
+}
+
+.input-container {
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.fieldlabels {
+    color: #2c3e50;
+    text-align: left;
+    font-weight: 500;
+    font-size: 14px;
+    margin-bottom: 5px;
+    display: block;
+}
+
+input[type="email"],
+input[type="password"] {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid #eee;
+    border-radius: 8px;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    background-color: #f8f9fa;
+    color: #2c3e50;
+}
+
+    input[type="email"]:focus,
+    input[type="password"]:focus {
+        border-color: #00bcd4;
+        box-shadow: 0 0 0 2px rgba(0, 188, 212, 0.2);
+        outline: none;
+    }
+
+.error {
+    color: #e74c3c;
+    font-size: 12px;
+    margin-top: 5px;
+    text-align: left;
+}
+
+.password-input-wrapper {
+    position: relative;
+}
+
+.toggle-password {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #95a5a6;
+    transition: color 0.3s ease;
+}
+
+    .toggle-password:hover {
+        color: #00bcd4;
+    }
+
+.form-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.remember-me {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+    .remember-me input[type="checkbox"] {
+        width: 16px;
+        height: 16px;
+        accent-color: #00bcd4;
+    }
+
+    .remember-me label {
+        color: #2c3e50;
+        font-size: 14px;
+        margin: 0;
+        cursor: pointer;
+    }
+
+.forgot-password {
+    color: #00bcd4;
+    text-decoration: none;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+    .forgot-password:hover {
+        color: #008697;
+        text-decoration: underline;
+    }
+
+.login-button {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    background: #00bcd4;
+    color: white;
+    font-weight: 500;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+    .login-button:hover {
+        background: #008697;
+        transform: translateY(-1px);
+    }
+
+    .login-button:active {
+        transform: translateY(0);
+    }
+
+.signup-link {
+    margin-bottom: 25px;
+    font-size: 14px;
+    color: #2c3e50;
+}
+
+    .signup-link a {
+        color: #00bcd4;
+        text-decoration: none;
+        font-weight: 500;
+        transition: all 0.3s ease;
+    }
+
+        .signup-link a:hover {
+            text-decoration: underline;
+            color: #008697;
+        }
+
+/* Verification Section Styles */
+.verification-section {
+    text-align: center;
+    padding: 20px 0;
+}
+
+    .verification-section h3 {
+        color: #2c3e50;
+        font-size: 24px;
+        margin-bottom: 15px;
+    }
+
+.security-info {
+    color: #2c3e50;
+    margin-bottom: 20px;
+}
+
+    .security-info i {
+        color: #00bcd4;
+        margin-right: 5px;
+    }
+
+.verification-text {
+    color: #666;
+    margin-bottom: 5px;
+}
+
+.email-display {
+    color: #2c3e50;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+.modify-email {
+    color: #00bcd4;
+    text-decoration: none;
+    font-size: 14px;
+    display: inline-block;
+    margin-bottom: 25px;
+    transition: all 0.3s ease;
+}
+
+    .modify-email:hover {
+        color: #008697;
+        text-decoration: underline;
+    }
+
+.code-inputs {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin: 25px 0;
+}
+
+.code-input {
+    width: 45px !important;
+    height: 45px !important;
+    text-align: center;
+    font-size: 20px !important;
+    border: 2px solid #ddd !important;
+    border-radius: 8px !important;
+    background: white !important;
+    padding: 0 !important;
+}
+
+    .code-input:focus {
+        border-color: #00bcd4 !important;
+        box-shadow: 0 0 0 2px rgba(0, 188, 212, 0.2) !important;
+    }
+

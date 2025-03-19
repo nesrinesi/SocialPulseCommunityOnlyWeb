@@ -1,0 +1,740 @@
+/*
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  height: 100%;
+}
+
+p {
+  color: grey;
+}
+.error{
+    color:red;
+}
+#heading {
+  text-transform: uppercase;
+  color: #095bb1;
+  font-weight: normal;
+}
+
+#msform {
+    text-align: center;
+    position: relative;
+    margin-top: 20px;
+}
+
+#msform fieldset {
+  background: white;
+  border: 0 none;
+  border-radius: 0.5rem;
+  box-sizing: border-box;
+  width: 100%;
+  margin: 0;
+  padding-bottom: 20px;
+  position: relative;
+}
+
+.form-card {
+  text-align: center;
+}
+
+#msform fieldset:not(:first-of-type) {
+  display: none;
+}
+
+#msform input, #msform select,
+#msform textarea {
+    padding: 8px 15px 8px 15px;
+    border: 1px solid #ccc;
+    border-radius: 0px;
+    margin-bottom: 25px;
+    margin-top: 2px;
+    width: 100%;
+    box-sizing: border-box;
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+    color: #2c3e50;
+    background-color: #eceff1;
+    font-size: 16px;
+    letter-spacing: 1px;
+}
+#otherSocietyInput {
+    margin-top: 10px;
+    display: none;
+}  
+    #msform input:focus,
+    #msform select:focus
+    #msform textarea:focus {
+        -moz-box-shadow: none !important;
+        -webkit-box-shadow: none !important;
+        box-shadow: none !important;
+        border: 1px solid #095bb1;
+        outline-width: 0;
+    }
+
+#msform .action-button {
+  width: 100px;
+  background: #095bb1;
+  font-weight: bold;
+  color: white;
+  border: 0 none;
+  border-radius: 0px;
+  cursor: pointer;
+  padding: 10px 5px;
+  margin: 10px 0px 10px 5px;
+  float: right;
+}
+#msform .action-button:hover,
+#msform .action-button:focus {
+  background-color: #074a91;
+}
+
+#msform .action-button-previous {
+  width: 100px;
+  background: #616161;
+  font-weight: bold;
+  color: white;
+  border: 0 none;
+  border-radius: 0px;
+  cursor: pointer;
+  padding: 10px 5px;
+  margin: 10px 5px 10px 0px;
+  float: right;
+}
+
+#msform .action-button-previous:hover,
+#msform .action-button-previous:focus {
+  background-color: #000000;
+}
+
+.card {
+  z-index: 0;
+  border: none;
+  position: relative;
+}
+
+.fs-title {
+  font-size: 25px;
+  color: #095bb1;
+  margin-bottom: 15px;
+  font-weight: normal;
+  text-align: left;
+}
+
+.purple-text {
+  color: #095bb1;
+  font-weight: normal;
+}
+
+.steps {
+  font-size: 25px;
+  color: gray;
+  margin-bottom: 10px;
+  font-weight: normal;
+  text-align: right;
+}
+
+.fieldlabels {
+  color: #001b41;
+  text-align: left;
+}
+
+#progressbar {
+  margin-bottom: 30px;
+  overflow: hidden;
+  color: lightgrey;
+}
+
+#progressbar .active {
+  color: #095bb1;
+}
+
+#progressbar li {
+  list-style-type: none;
+  font-size: 15px;
+  width: 20%;
+  float: left;
+  position: relative;
+  font-weight: 400;
+}
+
+#progressbar #Profile:before {
+  font-family: FontAwesome;
+  content: "\f007";
+}
+
+#progressbar #Company:before {
+  font-family: FontAwesome;
+  content: "\f1ad";
+}
+#progressbar #Adress:before {
+font-family: FontAwesome;
+content: "\f3c5";
+}
+
+#progressbar #PassWord:before {
+  font-family: FontAwesome;
+  content: "\f13e";
+}
+
+#progressbar #confirm:before {
+  font-family: FontAwesome;
+  content: "\f00c";
+}
+
+#progressbar li:before {
+  width: 50px;
+  height: 50px;
+  line-height: 45px;
+  display: block;
+  font-size: 20px;
+  color: #ffffff;
+  background: lightgray;
+  border-radius: 50%;
+  margin: 0 auto 10px auto;
+  padding: 2px;
+}
+
+#progressbar li:after {
+  content: "";
+  width: 100%;
+  height: 2px;
+  background: lightgray;
+  position: absolute;
+  left: 0;
+  top: 25px;
+  z-index: -1;
+}
+
+#progressbar li.active:before,
+#progressbar li.active:after {
+  background: #095bb1;
+}
+
+.progress {
+  height: 20px;
+}
+
+.progress-bar {
+  background-color: #095bb1;
+}
+ Logo upload container styles 
+.logo-upload-container {
+    width: 100%;
+    padding: 20px;
+}
+
+.logo-placeholder {
+    width: 150px;
+    height: 150px;
+    border: 2px dashed #ccc;
+    border-radius: 4px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: border-color 0.3s ease;
+}
+
+    .logo-placeholder:hover {
+        border-color: #095bb1;
+    }
+
+    .logo-placeholder i {
+        font-size: 40px;
+        color: #ccc;
+        margin-bottom: 10px;
+    }
+
+.company-logo-text {
+    color: #666;
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+ Verification code styles 
+.verification-container {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.verification-input input {
+    font-size: 24px !important;
+    letter-spacing: 8px !important;
+    text-align: center;
+    padding: 12px !important;
+    background-color: #fff !important;
+    border: 2px solid #095bb1 !important;
+    border-radius: 8px !important;
+    margin-bottom: 20px !important;
+}
+
+.resend-code {
+    background: none;
+    border: none;
+    color: #095bb1;
+    text-decoration: underline;
+    cursor: pointer;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+    .resend-code:hover {
+        color: #074a91;
+    }
+
+
+*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    min-height: 100vh;
+    padding: 20px 0;
+}
+
+.error {
+    color: #e74c3c;
+    font-size: 12px;
+    margin-top: -3px;
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+#heading {
+    text-transform: uppercase;
+    color: #095bb1;
+    font-weight: 600;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+p {
+    color: #7f8c8d;
+    font-size: 14px;
+}
+
+#msform {
+    text-align: center;
+    position: relative;
+    margin-top: 20px;
+}
+
+    #msform fieldset {
+        background: white;
+        border: 0 none;
+        border-radius: 0.5rem;
+        box-sizing: border-box;
+        width: 100%;
+        margin: 0;
+        padding: 15px 30px;
+        position: relative;
+    }
+
+        #msform fieldset:not(:first-of-type) {
+            display: none;
+        }
+
+.form-card {
+    text-align: left;
+    padding: 0 20px;
+}
+
+.input-container {
+    margin-bottom: 15px;
+}
+
+#msform input,
+#msform select,
+#msform textarea {
+    padding: 8px 15px;
+    border: 2px solid #eee;
+    border-radius: 8px;
+    margin-bottom: 5px;
+    margin-top: 3px;
+    width: 100%;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    background-color: #f8f9fa;
+    color: #2c3e50;
+}
+
+#msform select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23095bb1' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 15px center;
+    background-size: 15px;
+    padding-right: 45px;
+}
+
+    #msform select option {
+        color: #2c3e50;
+        background: white;
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    #msform input:focus,
+    #msform select:focus,
+    #msform textarea:focus {
+        border-color: #095bb1;
+        box-shadow: 0 0 0 3px rgba(9, 91, 177, 0.1);
+        outline: none;
+    }
+
+#msform .action-button {
+    width: 100px;
+    background: #095bb1;
+    font-weight: 600;
+    color: white;
+    border: 0;
+    border-radius: 25px;
+    cursor: pointer;
+    padding: 10px 5px;
+    margin: 10px 5px;
+    float: right;
+    transition: all 0.3s ease;
+}
+
+    #msform .action-button:hover {
+        background: #074a91;
+        transform: translateY(-1px);
+    }
+
+#msform .action-button-previous {
+    width: 100px;
+    background: #95a5a6;
+    font-weight: 600;
+    color: white;
+    border: 0;
+    border-radius: 25px;
+    cursor: pointer;
+    padding: 10px 5px;
+    margin: 10px 5px;
+    float: right;
+    transition: all 0.3s ease;
+}
+
+    #msform .action-button-previous:hover {
+        background: #7f8c8d;
+        transform: translateY(-1px);
+    }
+
+.fieldlabels {
+    color: #2c3e50;
+    text-align: left;
+    font-weight: 500;
+    font-size: 14px;
+    margin-bottom: 3px;
+    display: block;
+}
+
+#progressbar {
+    margin: 20px 0 25px 0;
+    overflow: hidden;
+    color: #ecf0f1;
+    padding: 0 20px;
+}
+
+    #progressbar .active {
+        color: #095bb1;
+    }
+
+    #progressbar li {
+        list-style-type: none;
+        font-size: 14px;
+        width: 20%;
+        float: left;
+        position: relative;
+        font-weight: 500;
+    }
+
+    #progressbar #Profile:before {
+        font-family: FontAwesome;
+        content: "\f007";
+    }
+
+    #progressbar #confirm:before {
+        font-family: FontAwesome;
+        content: "\f00c";
+    }
+
+    #progressbar #Company:before {
+        font-family: FontAwesome;
+        content: "\f1ad";
+    }
+
+    #progressbar #Adress:before {
+        font-family: FontAwesome;
+        content: "\f3c5";
+    }
+
+    #progressbar #PassWord:before {
+        font-family: FontAwesome;
+        content: "\f13e";
+    }
+
+    #progressbar li:before {
+        width: 40px;
+        height: 40px;
+        line-height: 38px;
+        display: block;
+        font-size: 18px;
+        color: #ffffff;
+        background: #ecf0f1;
+        border-radius: 50%;
+        margin: 0 auto 10px auto;
+        padding: 2px;
+        transition: all 0.3s ease;
+    }
+
+    #progressbar li.active:before {
+        background: #095bb1;
+        box-shadow: 0 3px 10px rgba(9, 91, 177, 0.3);
+    }
+
+    #progressbar li:after {
+        content: '';
+        width: 100%;
+        height: 2px;
+        background: #ecf0f1;
+        position: absolute;
+        left: -50%;
+        top: 20px;
+        z-index: -1;
+        transition: all 0.3s ease;
+    }
+
+    #progressbar li.active:after {
+        background: #095bb1;
+    }
+
+
+    #progressbar li:first-child:after {
+        content: none;
+    }
+
+.progress {
+    height: 6px;
+    border-radius: 4px;
+    background: #ecf0f1;
+    margin: 0 40px 20px 40px;
+}
+
+.progress-bar {
+    background: #095bb1;
+    border-radius: 4px;
+}
+
+.logo-upload-container {
+    width: 150px;
+    margin: 0 auto;
+    padding: 15px;
+    text-align: center;
+}
+
+.logo-placeholder {
+    width: 120px;
+    height: 120px;
+    border: 2px dashed #e0e0e0;
+    border-radius: 8px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+    .logo-placeholder:hover {
+        border-color: #095bb1;
+        background: #f8f9fa;
+    }
+
+    .logo-placeholder i {
+        font-size: 32px;
+        color: #95a5a6;
+        margin-bottom: 8px;
+    }
+
+.company-logo-text {
+    font-size: 13px;
+    color: #7f8c8d;
+    line-height: 1.4;
+}
+
+.verification-container {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.verification-input input {
+    font-size: 24px !important;
+    letter-spacing: 8px !important;
+    text-align: center;
+    padding: 12px !important;
+    background-color: #fff !important;
+    border: 2px solid #095bb1 !important;
+    border-radius: 8px !important;
+    margin-bottom: 20px !important;
+}
+
+.resend-code {
+    background: none;
+    border: none;
+    color: #095bb1;
+    text-decoration: underline;
+    cursor: pointer;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+    .resend-code:hover {
+        color: #074a91;
+    }
+
+#otherSocietyInput {
+    margin-top: 15px;
+    display: none;
+    transition: all 0.3s ease;
+}
+
+    #otherSocietyInput label {
+        margin-bottom: 3px;
+        display: block;
+    }
+
+    #otherSocietyInput input {
+        margin-bottom: 15px;
+    }
+
+.card {
+    z-index: 0;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    background: white;
+}
+
+.success-message {
+    color: #27ae60;
+    font-weight: 600;
+}
+
+.login-link {
+    margin-bottom: 25px;
+    font-size: 14px;
+    color: #2c3e50;
+}
+
+    .login-link a {
+        color: #00bcd4;
+        text-decoration: none;
+        font-weight: 500;
+        transition: all 0.3s ease;
+    }
+
+        .login-link a:hover {
+            text-decoration: underline;
+            color: #008697;
+        }
+
+.verification-section {
+    text-align: center;
+    padding: 20px 0;
+}
+
+    .verification-section h3 {
+        color: #2c3e50;
+        font-size: 24px;
+        margin-bottom: 15px;
+    }
+
+.security-info {
+    color: #2c3e50;
+    margin-bottom: 20px;
+}
+
+    .security-info i {
+        color: #00bcd4;
+        margin-right: 5px;
+    }
+
+.verification-text {
+    color: #666;
+    margin-bottom: 5px;
+}
+
+.email-display {
+    color: #2c3e50;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+.modify-email {
+    color: #00bcd4;
+    text-decoration: none;
+    font-size: 14px;
+    display: inline-block;
+    margin-bottom: 25px;
+    transition: all 0.3s ease;
+}
+
+    .modify-email:hover {
+        color: #008697;
+        text-decoration: underline;
+    }
+
+.code-inputs {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin: 25px 0;
+}
+
+.code-input {
+    width: 45px !important;
+    height: 45px !important;
+    text-align: center;
+    font-size: 20px !important;
+    border: 2px solid #ddd !important;
+    border-radius: 8px !important;
+    background: white !important;
+    padding: 0 !important;
+}
+
+    .code-input:focus {
+        border-color: #00bcd4 !important;
+        box-shadow: 0 0 0 2px rgba(0, 188, 212, 0.2) !important;
+    }
+
+.resend-timer {
+    color: #666;
+    font-size: 14px;
+    margin-bottom: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+    .resend-timer:hover {
+        color: #00bcd4;
+    }
+
+.input-pic-hidden{
+    display:none;
+}

@@ -1,0 +1,190 @@
+﻿@{
+    Layout = "~/Views/Shared/authentification/layout/_AuthentificationLayout.cshtml";
+}
+
+  <!-- partial:index.partial.html -->
+      <div class="container-fluid">
+          <div class="row justify-content-center">
+              <div class="col-11 col-sm-10 col-md-10 col-lg-6 col-xl-5 text-center p-0 mt-3 mb-2">
+                  <div class="card px-0 pt-4 pb-0 mt-3 mb-3">
+                      <h2 id="heading">Sign Up Your User Account</h2>
+                      <p>Fill all form field to go to next step</p>
+                      <div class="login-link">
+                    Already have an account? <a href="/Connection/Connection"  class="purple-text">Login here</a>
+                      </div>
+                      <form id="msform">
+                          <!-- progressbar -->
+                          <ul id="progressbar">
+                              <li class="active" id="Profile"><strong>Account</strong></li>
+                              <li id="confirm"><strong>Confirm</strong></li>
+                              <li id="Company"><strong>Company</strong></li>
+                              <li id="Adress"><strong>Adress</strong></li>
+                              <li id="PassWord"><strong>PassWord</strong></li>
+                             
+                              
+                          </ul>
+                          <div class="progress">
+                              <div class="progress-bar progress-bar-striped progress-bar-animated"
+                                   role="progressbar"
+                                   aria-valuemin="0"
+                                   aria-valuemax="100"></div>
+                          </div>
+                          <br />
+                          <!-- fieldsets -->
+                      <fieldset id="step-1">
+                              <div class="form-card">
+
+                            <div class="input-container">
+                                <label class="fieldlabels">Email: *</label>
+                                <input type="email" id="mail" name="email" placeholder="Email" />
+                                <div class="error email-error"></div>
+                            </div>
+  
+                                  <div class="input-container">
+                                  <label class="fieldlabels">First Name: *</label>
+                                  <input type="text" id="fname" name="fname" placeholder="First Name" />
+                                  <div class="error fname-error"></div>
+                                  </div>
+  
+                              <div class="input-container">
+                                  <label class="fieldlabels">Last Name: *</label>
+                                  <input type="text" id="lname" name="lname" placeholder="Last Name" />
+                                  <div class="error lname-error"></div>
+                              </div>
+
+
+                            <div class="input-container">
+                                <label class="fieldlabels">Contact No.: *</label>
+                                <input type="text" id="phone" name="phno" placeholder="Contact No." />
+                                <div class="error phone-error"></div>
+                            </div>
+
+                        </div>
+                        <input type="button"
+                               name="next"
+                               class="next action-button"
+                               value="Next" id="next-step-one" />
+                    </fieldset>
+                    <fieldset id="step-2">
+
+                        <div class="form-card">
+
+                            
+                            <div class="verification-section">
+                                <h3>Se connecter</h3>
+                                <p class="security-info"><i class="fas fa-shield-alt"></i> Vos informations sont protégées</p>
+                                <p class="verification-text">Saisissez le code à 6 chiffres envoyé à l'adresse</p>
+                                <p class="email-display"></p>
+                                <a href="#" class="modify-email">Modifier l'adresse e-mail</a>
+
+                                <div class="code-inputs">
+                                    <input type="text" maxlength="1" class="code-input" />
+                                    <input type="text" maxlength="1" class="code-input" />
+                                    <input type="text" maxlength="1" class="code-input" />
+                                    <input type="text" maxlength="1" class="code-input" />
+                                    <input type="text" maxlength="1" class="code-input" />
+                                    <input type="text" maxlength="1" class="code-input" />
+                                </div>
+
+                                <div class="resend-timer">
+                                    (<span id="timer">44s</span>) Renvoyer le code
+                                </div>
+                            </div>
+                        </div>
+
+                        <input type="button"
+                               name="next"
+                               class="next action-button"
+                               value="Next" id="next-step-two" />
+                        <input type="button"
+                               name="previous"
+                               class="previous action-button-previous"
+                               value="Previous" />
+                    </fieldset>
+                    <fieldset id="step-3">
+                        <!-- Logo upload container -->
+                        <div class="logo-upload-container text-center mb-4">
+                            <div class="logo-placeholder">
+                                <input type="file" class="input-pic-hidden" />
+                                <i class="fas fa-image"></i>
+                                <div class="company-logo-text">Company<br>logo</div>
+                            </div>
+                        </div>
+
+
+                        <div class="form-card" id="step_3">
+                            <label class="fieldlabels">Company Name: *</label>
+                            <input type="text" id="cname" name="cname" placeholder="Company Name" />
+                            <div class="error cname-error"></div>
+                            <label for="societyType" class="fieldlabels">Type de Société :</label>
+                            <select id="societyType" name="societyType">
+                                <option value="">Sélectionner un type</option>
+                                <option value="educational">Éducative</option>
+                                <option value="Medical">Médicale</option>
+                                <option value="Sports">Sportive</option>
+                                <option value="other">Autre</option>
+                            </select>
+                            <div id="otherSocietyInput">
+                                <label for="otherSociety" class="fieldlabels">Spécifiez le type de société :</label>
+                                <input type="text" id="otherSociety" name="otherSociety" placeholder="Entrez le type de société">
+                            </div>
+                        </div>
+                        <input type="button"
+                               name="next"
+                               class="next action-button"
+                               value="Next" id="next-step-three" />
+                        <input type="button"
+                               name="previous"
+                               class="previous action-button-previous"
+                               value="Previous" />
+                    </fieldset>
+                    <fieldset id="step-4">
+                        <div class="form-card" id="step_4">
+                            <label class="fieldlabels">Company Adress: *</label>
+                            <input type="text" id="CAdress" name="CAress" placeholder="Company Adress" />
+                            <div class="error Adress-error"></div>
+
+                            <label class="fieldlabels">Postal Code: *</label>
+                            <input type="text" id="Pcode" name="Pcode" placeholder="Postal Code" />
+                            <div class="error Pcode-error"></div>
+
+
+                            <label class="fieldlabels">City: *</label>
+                            <select id="City" name="City">
+                                <option value="">Sélectionner city</option>
+                                <option value="paris">Paris</option>
+                                <option value="london">London</option>
+                                <option value="new_york">New York</option>
+                                <option value="tokyo">Tokyo</option>
+                            </select>
+                            <div class="error City-error"></div>
+                        </div>
+                        <input type="button" name="next" class="next action-button" value="Next" id="next-step-four" />
+                        <input type="button" name="previous" class="previous action-button-previous" value="Previous" />
+                    </fieldset>
+                    <fieldset id="step-5">
+                        <div class="form-card">
+                            <label class="fieldlabels">Password: *</label>
+                            <input type="password" id='pwd' name="pwd" placeholder="Password" />
+                            <label class="fieldlabels">Confirm Password: *</label>
+                            <input type="password"
+                                   id="cpwd"
+                                   name="cpwd"
+                                   placeholder="Confirm Password" />
+                        </div>
+                        <input type="button"
+                               name="next"
+                               class="next action-button"
+                               value="Submit" id="submit" />
+                        <input type="button"
+                               name="previous"
+                               class="previous action-button-previous"
+                               value="Previous" />
+                    </fieldset>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+

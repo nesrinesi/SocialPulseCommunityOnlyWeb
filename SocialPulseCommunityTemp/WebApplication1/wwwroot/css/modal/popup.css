@@ -1,0 +1,134 @@
+﻿.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease-in-out;
+}
+.modal:before {
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color:black;
+    opacity:.7;
+    z-index: 9;
+}
+.modal .modal-inner {
+    position: relative;
+    text-align: center;
+    flex: none;
+    min-width: 200px;
+    min-height: 170px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    box-shadow: 0 4px 22px rgba(0, 0, 0, 0.45);
+    animation: scaleAnim;
+    animation-duration: 1s;
+    background-color: white;
+    transition: all 0.3s ease;
+    z-index: 99;
+}
+.popup-header, .popup-content, .popup-footer {
+    width: 100%;
+}
+.popup-header {
+    height: 40px;
+    background-color: black;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 600;
+    font-size:16px;
+}
+.popup-content {
+    height: calc(100% - 90px);
+    position: relative;
+}
+.popup-footer {
+    height: 50px;
+    background-color: black;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: 0;
+}
+.modal-btn {
+    width: 150px;
+    height: 40px;
+    background-color: white;
+    font-weight: 500;
+    border-radius: 8px;
+    margin: 0 10px;
+    box-shadow: 0 3px 6px rgba(255,255,255,0.16), 0 3px 6px rgba(255,255,255,0.23);
+}
+    .modal-btn:hover {
+        box-shadow: 0 14px 28px rgba(255,255,255,0.25), 0 10px 10px rgba(255,255,255,0.22);
+    }
+.closeAnim {
+    animation: scaleAnimReverse;
+    animation-duration: 1s;
+}
+.modal .modal-inner .close-modal {
+    position: absolute;
+    right: 1.2rem;
+    display: inline-block;
+    color:white;
+    background-size: contain;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.modal .modal-inner .close-modal:hover {
+    opacity: 0.45;
+}
+.modal .modal-inner h2 {
+    font-size: 3rem;
+}
+
+.modal .modal-inner h3 {
+    font-weight: 400;
+}
+.modal .overlay-modal {
+    position: absolute;
+    background: rgba(0, 0, 0, 0.75);
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+}
+.modal-large-btn {
+    width: 300px;
+}
+.container-inner-modal {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    overflow-y: auto;
+}
+@keyframes scaleAnim{
+    from{
+        transform:scale(0);
+    }
+    to{
+        transform:scale(1);
+    }
+}
+@keyframes scaleAnimReverse {
+    from {
+        transform: scale(1);
+    }
+
+    to {
+        transform: scale(0);
+    }
+}

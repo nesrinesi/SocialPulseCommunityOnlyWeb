@@ -1,0 +1,92 @@
+﻿strong {
+    font-family: Open Sans Bold, Arial Bold, sans-serif;
+    font-weight:bold;
+}
+.padding-top-20{
+    padding-top:20px !important;
+}
+.pack-container {
+    padding: 32px;
+    box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.1) 0px 4px 6px -4px;
+    border: .666667px solid rgb(229, 231, 235);
+    border-radius: 4px;
+    color: rgb(46, 67, 96);
+    background-color: rgb(0, 27, 65);
+    background-image: linear-gradient(to top, rgb(0, 27, 65), rgb(0, 61, 143));
+    color:white;
+}
+.pack-option {
+    padding-bottom: 20px;
+    font-family: Open Sans Regular;
+}
+.pack-header {
+    padding-bottom: 16px;
+}
+.pack-header-title {
+    font-size: 1.5rem;
+    line-height: 2rem;
+    font-family: Overpass Semi Bold;
+}
+.pack-header-text {
+    padding-bottom: 16px;
+}
+.price-container {
+    display: flex;
+    line-height: 1;
+    font-size: 64px;
+    text-align: left;
+    font-weight: 700;
+    font-family: Open Sans Bold, Arial, sans-serif;
+}
+
+.price-container.price-type-offer-price.price-normal span {
+    display: flex;
+}
+.price-container:not(.webfont-price-highlight) > .price-currency-after {
+    margin-top: 5px;
+    font-size: 36px;
+}
+    .price-container .price-text-behind-inline {
+        margin-left: -20px;
+        display: flex;
+        flex-direction: column;
+    }
+.price-container > .price-text-behind-inline {
+    font-size: 12.8px;
+    margin-top: 2.85rem;
+}
+.price-container > .price-text-behind-inline {
+    display: inline-table;
+    font-size: 1rem;
+    margin-top: 3.5rem;
+}
+
+    .price-container.price-text.price-text-bold.price-sm-formatted.price-md-formatted.price-lg-formatted.price.price-dot-separated {
+        flex-direction: column;
+        font-weight: 700;
+        font-family: Open Sans Bold,Arial,sans-serif;
+    }
+.price-text-tax-hint {
+    padding-top: 5px;
+    display: block;
+}
+.price-normal {
+    display: flex !important;
+}
+.pack-btn {
+    background-color: rgb(17 199 230 );
+    outline: 2px solid transparent;
+    outline-offset: 2px;
+    font-family: Open Sans Semi Bold;
+    color: rgb(11 42 99);
+    text-align: center;
+    border-radius: 40px;
+    padding: 12px 24px;
+    margin-top: 16px;
+    cursor: pointer;
+}
+.pack-btn:hover {
+    background-color: rgb(127 228 246);
+}
+
+

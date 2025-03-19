@@ -1,0 +1,499 @@
+/* ======================= Cards ====================== */
+.cardBox {
+  position: relative;
+  width: 100%;
+  padding: 20px;
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fill,
+    minmax(250px, 1fr)
+  ); /* Prevents stretching */
+  grid-gap: 20px;
+}
+
+.cardBox .card {
+  position: relative;
+  width: 250px;
+  height: 400px;
+  border-radius: 16px;
+  overflow: hidden;
+  background: var(--white);
+  box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  border: 1px solid #ddd; /* Added border for visibility */
+}
+
+.cardBox .card:hover {
+  transform: translateY(-10px);
+  background: var(--blue);
+}
+
+.cardBox .card img {
+  width: 100%;
+  height: 60%;
+  object-fit: cover;
+}
+
+.cardBox .card .content {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 40%;
+}
+
+.cardBox .card .content h3 {
+  font-size: 18px;
+  color: var(--black2);
+  margin: 0;
+}
+
+.cardBox .card .content p {
+  font-size: 14px;
+  color: var(--black2);
+  margin: 8px 0;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+
+.cardBox .card .content span {
+  font-size: 12px;
+  color: var(--black2);
+}
+
+.cardBox .card:hover .content h3,
+.cardBox .card:hover .content p,
+.cardBox .card:hover .content span {
+  color: var(--white);
+}
+/* ================== Order Details List ============== */
+.details {
+  position: relative;
+  width: 100%;
+  padding: 20px;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-gap: 30px;
+  /* margin-top: 10px;*/
+}
+
+.details .recentOrders {
+  position: relative;
+  display: grid;
+  min-height: 500px;
+  background: var(--white);
+  padding: 20px;
+  box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
+  border-radius: 20px;
+  border: 1px solid #ddd; /* Added border for visibility */
+}
+
+/* Button Styling */
+.buttonContainer {
+  display: flex;
+  justify-content: flex-end; /* Align buttons to the right */
+  gap: 10px; /* Space between buttons */
+  margin-top: 15px;
+}
+.btn {
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  width: 100px;
+  height: 35px;
+  background: var(--blue);
+  text-decoration: none;
+  color: var(--white);
+}
+
+/* Card Styling */
+.cardBox .cardedit {
+  position: relative;
+  width: 250px;
+  height: 400px;
+  border-radius: 16px;
+  overflow: hidden;
+  background: var(--white);
+  box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  border: 1px solid #ddd; /* Added border for visibility */
+}
+.cardBox .cardedit img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+/* ====================== filter  ========================== */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.filters-container {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.filters {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  flex-grow: 1;
+  flex-wrap: wrap;
+}
+
+.search {
+  position: relative;
+  width: 100%; /* Full width on smaller screens */
+  max-width: 200px; /* Limit width on larger screens */
+  margin: 0 10px;
+}
+
+.search label {
+  position: relative;
+  width: 100%;
+}
+
+.search label input {
+  width: 100%;
+  height: 40px;
+  border-radius: 20px;
+  padding: 5px 20px;
+  padding-left: 35px;
+  font-size: 14px;
+  outline: none;
+  border: 1px solid var(--black2);
+}
+
+.search label ion-icon {
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  transform: translateY(-50%);
+  font-size: 1.2rem;
+  color: var(--black2);
+}
+
+select {
+  height: 40px;
+  padding: 5px 15px;
+  border-radius: 20px;
+  border: 1px solid var(--black2);
+  font-size: 14px;
+  outline: none;
+  background-color: var(--white);
+  color: var(--black1);
+  cursor: pointer;
+  width: 100%; /* Full width on smaller screens */
+  max-width: 200px; /* Limit width on larger screens */
+  appearance: none; /* Remove default arrow */
+  -webkit-appearance: none; /* For Safari */
+  -moz-appearance: none; /* For Firefox */
+  background-image: url("data:image/svg+xml;charset=US-ASCII,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%232a2185'><polygon points='0,0 16,0 8,12'/></svg>");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 10px;
+}
+
+select:hover {
+  border-color: var(--blue);
+}
+
+.grid-toggle {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-left: 10px;
+  font-size: 16px;
+  font-weight: 500;
+  flex-shrink: 0; /* Prevent shrinking */
+}
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 24px;
+}
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+  font-family: "Ubuntu", sans-serif;
+}
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: 0.4s;
+  border-radius: 24px;
+}
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 18px;
+  width: 18px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+input:checked + .slider {
+  background-color: #2a2185;
+}
+input:checked + .slider:before {
+  transform: translateX(26px);
+}
+
+/* Responsive Design */
+@media (max-width: 991px) {
+  .filters {
+    align-items: stretch;
+  }
+
+  .search,
+  select {
+    width: 100%;
+    max-width: none;
+  }
+
+  select {
+    position: relative;
+    margin: 0 10px;
+  }
+
+  .grid-toggle {
+    width: 100%;
+    justify-content: flex-start;
+    margin-top: 10px;
+    margin-left: 10px;
+  }
+}
+
+/* Tablet View */
+@media (max-width: 768px) {
+  .filters {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .search,
+  select {
+    width: 100%;
+    max-width: none;
+  }
+
+  select {
+    position: relative;
+  }
+
+  .grid-toggle {
+    width: 100%;
+    justify-content: flex-start;
+    margin-top: 10px;
+    margin-left: 10px;
+  }
+}
+/* Mobile View */
+@media (max-width: 480px) {
+  .filters {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .search,
+  select {
+    width: 100%;
+    max-width: none;
+    font-size: 14px; /* Adjust font size for small screens */
+  }
+
+  select {
+    position: relative;
+    font-size: 14px;
+  }
+
+  .grid-toggle {
+    width: 100%;
+    justify-content: flex-start;
+    margin-top: 5px;
+    margin-left: 5px;
+  }
+}
+.reactionIconsContainer {
+  display: flex;
+  align-items: center;
+  gap: 15px; /* Space between each icon */
+}
+
+/* Reaction Icons Section */
+.reactionIcons {
+  border-radius: 8px;
+  border: 1px solid #ddd; /* Light border for visibility */
+  width: fit-content; /* Wrap around icons */
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  width: 55px;
+}
+
+.imageContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: flex-start;
+}
+
+/* Image card styling */
+.imgedit {
+  width: 200px;
+  height: 300px;
+  border-radius: 16px;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
+  display: flex;
+  align-items: center;
+  border: 1px solid #ddd;
+  position: relative;
+  margin: 20px 0 20px 0;
+}
+
+.imgedit img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Plus (+) Button Styling */
+.addImageCard {
+  width: 200px;
+  height: 300px;
+  border-radius: 16px;
+  background: #f0f0f0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 40px;
+  font-weight: bold;
+  color: gray;
+  cursor: pointer;
+  box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
+  border: 1px solid #ddd;
+  margin: 20px 0 20px 0;
+}
+
+.addImageCard:hover {
+  background: #e0e0e0;
+}
+/* Remove button */
+.deleteImgBtn {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background: #2a2185;
+  color: white;
+  border: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  font-size: 14px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.deleteImgBtn:hover {
+  background: red;
+}
+
+/* Hidden File Input (Remove focus border) */
+.hidden {
+  display: none;
+  outline: none;
+  border: none;
+}
+
+/* Modal Styling */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  width: 80%; /* Make it wider */
+  max-width: 900px; /* Set a max width */
+  height: auto; /* Allow dynamic height */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+/* Make sure #postContainer takes full width inside modal */
+.modal-content .details {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Ensure recentOrders inside modal takes full width */
+.modal-content .recentOrders {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  border-radius: 10px;
+  background: var(--white);
+  box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
+}
+/* Close (X) button styling */
+.close {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  font-size: 25px;
+  cursor: pointer;
+  color: var(--black2);
+  background: none;
+  border: none;
+}
+
+.close:hover {
+  color: red;
+}
