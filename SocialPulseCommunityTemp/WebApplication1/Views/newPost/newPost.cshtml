@@ -1,0 +1,140 @@
+﻿
+@{
+    Layout = "~/Views/Shared/NavSide/_LayoutNavSide.cshtml";
+}
+<div class="main">
+        <div class="content-wrapper">
+          <!-- Post Creation Area -->
+          <div class="post-creation">
+            <div class="post-editor">
+              <!-- Account Selection -->
+              <div class="account-selector">
+                <div class="social-media-boxes">
+                  <div class="social-box" data-platform="facebook">
+                    <ion-icon name="logo-facebook"></ion-icon>
+                    <span>Facebook</span>
+                  </div>
+                  <div class="social-box" data-platform="twitter">
+                    <ion-icon name="logo-twitter"></ion-icon>
+                    <span>Twitter</span>
+                  </div>
+                  <div class="social-box" data-platform="instagram">
+                    <ion-icon name="logo-instagram"></ion-icon>
+                    <span>Instagram</span>
+                  </div>
+                  <div class="social-box" data-platform="linkedin">
+                    <ion-icon name="logo-linkedin"></ion-icon>
+                    <span>LinkedIn</span>
+                  </div>
+                  <div class="social-box" data-platform="youtube">
+                    <ion-icon name="logo-youtube"></ion-icon>
+                    <span>YouTube</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Editor Area -->
+              <div class="editor">
+                <div class="text-editor" contenteditable="true" id="postContent" placeholder="Rédigez votre message ici..."></div>
+
+                <!-- Editor Tools -->
+                <div class="editor-tools">
+                  <div class="toolbar">
+                    <button class="tool-btn">
+                      <ion-icon name="camera-outline"></ion-icon>
+                    </button>
+                    <button class="tool-btn" onclick="formatText('bold')">
+                      <i class="fa fa-bold"></i>
+                    </button>
+                    <button class="tool-btn" onclick="formatText('italic')">
+                      <i class="fa fa-italic"></i>
+                    </button>
+                    <button class="tool-btn" onclick="addHashtag()">
+                      <i class="fa fa-hashtag"></i>
+                    </button>
+                    <button class="tool-btn" onclick="openEmojiPicker()">
+                      <i class="far fa-smile"></i>
+                    </button>
+                  </div>
+                </div>
+
+                <!-- Media Upload -->
+                <div class="media-upload-container">
+                  <div class="media-upload" id="dropZone">
+                    <i class="fas fa-cloud-upload-alt"></i>
+                    <p>Glissez et déposez vos médias ici</p>
+                    <input type="file" id="fileInput" multiple accept="image/*,video/*" hidden>
+                  </div>
+                  <div class="media-preview" id="mediaPreview">
+                    <div class="add-more-media" id="addMoreMedia" style="display: none;">
+                      <i class="fas fa-plus"></i>
+                      <input type="file" id="additionalFileInput" multiple accept="image/*,video/*" hidden>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="action-buttons">
+                  <button class="btn draft">Save Draft</button>
+                  <button class="btn schedule" id="scheduleBtn">Schedule</button>
+                  <button class="btn publish">Publish Now</button>
+                </div>
+
+                <!-- Schedule Modal -->
+                <div class="schedule-modal" id="scheduleModal">
+                  <div class="schedule-modal-content">
+                    <h3>Schedule Post</h3>
+                    <input type="datetime-local" id="scheduleTime" class="schedule-input">
+                    <div class="modal-buttons">
+                      <button class="btn cancel" id="cancelSchedule">Cancel</button>
+                      <button class="btn confirm" id="confirmSchedule">Confirm</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Preview Area -->
+              <div class="preview-area">
+                <div class="preview-content" id="previewContent"></div>
+                <div class="preview-media"></div>
+              </div>
+            </div>
+
+            <!-- Preview Panel -->
+            <div class="preview-panel">
+              <div class="preview-header">
+                <h3>Post Preview</h3>
+
+                
+
+                <div class="preview-type-selector">
+                  <button class="  preview-type-btn active" data-type="post">Post</button>
+                  <button class=" preview-type-btn" data-type="reel">Reel</button>
+                  <button class="preview-type-btn" data-type="story">Story</button>
+                </div>
+              </div>
+              
+              <div class="preview-content">
+                <div class="preview-type post active">
+                  <div class="preview-image-container">
+                    <img id="previewImage" src="" alt="Preview" style="display: none;">
+                  </div>
+                  <div class="preview-text"></div>
+                </div>
+                <div class="preview-type reel">
+                  <div class="preview-image-container vertical">
+                    <img id="previewImageReel" src="" alt="Reel Preview" style="display: none;">
+                  </div>
+                  <div class="preview-text"></div>
+                </div>
+                <div class="preview-type story">
+                  <div class="preview-image-container vertical">
+                    <img id="previewImageStory" src="" alt="Story Preview" style="display: none;">
+                  </div>
+                  <div class="preview-text"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
