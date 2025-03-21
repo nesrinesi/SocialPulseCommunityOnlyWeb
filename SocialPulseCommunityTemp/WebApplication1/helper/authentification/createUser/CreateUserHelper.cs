@@ -2,8 +2,11 @@
 using Microsoft.AspNetCore.Mvc.Rendering;
 using SocialPulseCommunityWeb.helper.forms;
 using SocialPulseCommunityWeb.Models.user;
+using System;
 using System.Reflection.Emit;
 using System.Text;
+using static Org.BouncyCastle.Crypto.Engines.SM2Engine;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace SocialPulseCommunityWeb.helper.authentification.createUser
 {
@@ -30,9 +33,33 @@ namespace SocialPulseCommunityWeb.helper.authentification.createUser
         public static string Step2(UserModel user)
         {
             StringBuilder sb = new StringBuilder();
+            sb.Append("< div class='verification - section'>");
+            sb.Append("<h3>Se connecter</h3>");
+            sb.Append("<p class='security - info'><i class='fas fa - shield - alt'></i> Vos informations sont protégées</p>");
+            sb.Append("<p class='verification-text'>Saisissez le code à 6 chiffres envoyé à l''adresse</p>'");
+            sb.Append("<p class='email-display'></p>");
+            sb.Append("<a href = '#' class='modify-email'>Modifier l''adresse e - mail </ a > '");
+            sb.Append("<div class=\"code-inputs\">");
+            sb.Append(" <input type = \"text\" maxlength=\"1\" class=\"code-input\" />");
+            sb.Append(" <input type = \"text\" maxlength=\"1\" class=\"code-input\" />");
+            sb.Append(" <input type = \"text\" maxlength=\"1\" class=\"code-input\" />");
+            sb.Append(" <input type = \"text\" maxlength=\"1\" class=\"code-input\" />");
+            sb.Append(" <input type = \"text\" maxlength=\"1\" class=\"code-input\" />");
+            sb.Append(" <input type = \"text\" maxlength=\"1\" class=\"code-input\" />");
+            sb.Append("</div>");
+          
 
-
-           
+            // Add error message display
+            if (!string.IsNullOrEmpty(user.ConfirmError))
+            {
+                sb.Append($@"<div class='error'>{user.ConfirmError}</div>");
+            }
+            sb.Append("  <div class=\"resend-timer\">");
+            sb.Append("(<span id = \"timer\" > 44s</span>) Renvoyer le code");
+            sb.Append(" </div>");
+                                         
+                            
+    
 
             sb.Append($@"<input type=""button"" name=""next"" class=""next action-button"" value=""Next"" id=""next-step-two"" />");
             sb.Append($@"<input type=""button"" name=""previous"" class=""previous action-button-previous"" value=""Previous"" id=""prev-step-one"" />");

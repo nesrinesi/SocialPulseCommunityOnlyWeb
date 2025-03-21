@@ -52,10 +52,10 @@ $(function () {
         var fname = $('#fname').val();
         var lname = $('#lname').val();
         var phone = $('#phone').val();
-
+        
         var item = $(this);
        
-        $.post('/Authentification/NextStep1', { Mail: mail,firstname: fname, lastname: lname, phone: phone }, function (data) {
+        $.post('/Authentification/NextStep1', { Mail: mail, firstname: fname, lastname: lname, phone: phone}, function (data) {
             if (data.hasError) {
                 $('#step-1').html(data.html);
             }
@@ -69,10 +69,13 @@ $(function () {
     $('body').on('click', '#next-step-two', function () {
      
        
-
+        var code = $(".code-input").map(function () {
+            return $(this).val();
+        }).get().join("");
+        console.log('this is the code u enterd', code);
         var item = $(this);
 
-        $.post('/Authentification/NextStep2', { }, function (data) {
+        $.post('/Authentification/NextStep2', { Confirm:code }, function (data) {
            
             if (data.hasError) {
                 $('#step-2').html(data.html);
@@ -111,9 +114,7 @@ $(function () {
         var Adress = $('#CAdress').val(); 
         var Pcode = $('#Pcode').val(); 
         var City = $('#City').val(); 
-        console.log('aderess',Adress);
-        console.log(Pcode);
-        console.log(City);
+
 
         var item = $(this);
         $.post('/Authentification/NextStep4', { Companyadress: Adress, Postalcode: Pcode, City: City }, function (data) {
@@ -185,3 +186,52 @@ $(function () {
     });
 
 });
+
+$(function () {
+
+
+
+/*var seconds = 45; // Set timer to 45 seconds
+
+var timer = setInterval(function () {
+    seconds--;
+    $("#timer").text(seconds + "s");
+
+    if (seconds <= 0) {
+        clearInterval(timer);
+        $(".resend-timer").html('<a href="#" class="resend-link">Renvoyer le code</a>');
+
+        $(".resend-link").click(function (e) {
+            e.preventDefault();
+            seconds = 45;
+            $(".resend-timer").html('(<span id="timer">45s</span>) Renvoyer le code');
+            timer = setInterval(arguments.callee, 1000);
+        });
+    }
+}, 1000);*/
+
+   
+$(".code-input").on('input', function () {
+    if ($(this).val().length === 1) {
+        var $next = $(this).next('.code-input');
+        if ($next.length) {
+            $next.focus();
+        }
+    }
+});
+
+
+// Handle backspace key for moving to the previous input and clearing
+$(".code-input").on('keydown', function (e) {
+    if (e.key === "Backspace" && $(this).val() === "") {
+        var $prev = $(this).prev('.code-input');
+        if ($prev.length) {
+            $prev.val("").focus();
+            e.preventDefault();
+        }
+    }
+});
+
+});
+
+

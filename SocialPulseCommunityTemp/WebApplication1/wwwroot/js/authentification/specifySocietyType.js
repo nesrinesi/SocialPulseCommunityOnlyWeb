@@ -31,29 +31,16 @@
             };
             reader.readAsDataURL(e.target.files[0]);
         }
+
+
+
+
+
     });
-
-
-
-    function startTimer() {
-        let timeLeft = 44;
-        const timerElement = $('#timer');
-
-        const timer = setInterval(() => {
-            timeLeft--;
-            timerElement.text(timeLeft + 's');
-
-            if (timeLeft <= 0) {
-                clearInterval(timer);
-                timerElement.parent().css({
-                    'color': '#673AB7',
-                    'text-decoration': 'underline'
-                });
-            }
-        }, 1000);
-    }
-
-
 });
+
+
+
+
 
 

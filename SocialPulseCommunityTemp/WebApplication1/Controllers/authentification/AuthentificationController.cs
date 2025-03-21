@@ -25,6 +25,7 @@ namespace SocialPulseCommunityWeb.Controllers.authentification
         public IActionResult NextStep1(UserModel model)
         {
             bool hasError = false;
+            
 
             if (string.IsNullOrEmpty(model.Mail))
             {
@@ -60,23 +61,65 @@ namespace SocialPulseCommunityWeb.Controllers.authentification
                 hasError = true;
             }
             string error = "";
-            
+
+            /* if (!hasError)
+
+			 {
+				 var email = new MimeMessage();
+				 email.From.Add(MailboxAddress.Parse("contact@socialpulsecommunity.com"));
+				 email.To.Add(MailboxAddress.Parse(model.Mail));
+				 email.Subject = "Confirmation de Mail SPC";
+				 email.Body = new TextPart("code secret 11111") { Text = "<h1>Example HTML Message Body</h1>" };
+
+				 // send email
+				 var smtp = new MailKit.Net.Smtp.SmtpClient();
+				 smtp.Connect("smtp.ionos.fr", 587, SecureSocketOptions.StartTls);
+				 smtp.Authenticate("contact@socialpulsecommunity.com", "aT0QWXZt5CcEdLTFxLjiVB");
+
+				 try
+				 {
+					 smtp.Send(email);
+				 }
+				 catch (Exception e)
+				 {
+					 throw e;
+				 }
+				 finally
+				 {
+					 smtp.Disconnect(true);
+				 }
+
+			 }*/
+
             if (!hasError)
             {
-                var email = new MimeMessage();
-                email.From.Add(MailboxAddress.Parse("contact@socialpulsecommunity.com"));
-                email.To.Add(MailboxAddress.Parse(model.Mail));
-                email.Subject = "Confirmation de Mail SPC";
-                email.Body = new TextPart("code secret 11111") { Text = "<h1>Example HTML Message Body</h1>" };
+                // Generate a random 6-digit code
+                Random random = new Random();
+                 model.verificationCode = random.Next(100000, 1000000).ToString(); // Generates a number between 100000 and 999999
+
+                var email = new MimeMessage(); //This creates a new email message object.
+                email.From.Add(MailboxAddress.Parse("contact@socialpulsecommunity.com"));//This sets who the email is from
+                email.To.Add(MailboxAddress.Parse(model.Mail));//This sets who the email is going to. model.Mail contains the recipient's email address.
+                email.Subject = "Confirmation de Mail SPC"; //This sets the subject line of the email.
+
+                // HTML version with the verification code
+                email.Body = new TextPart(MimeKit.Text.TextFormat.Html)
+                {
+                    Text = $"<h1>Code de Confirmation</h1><p>Votre code de vérification est: <strong>{model.verificationCode}</strong></p>"
+                };
 
                 // send email
-                var smtp = new MailKit.Net.Smtp.SmtpClient();
+                var smtp = new MailKit.Net.Smtp.SmtpClient();//This creates a client that will handle sending the email.
                 smtp.Connect("smtp.ionos.fr", 587, SecureSocketOptions.StartTls);
-                smtp.Authenticate("contact@socialpulsecommunity.com", "aT0QWXZt5CcEdLTFxLjiVB");
-
+                smtp.Authenticate("contact@socialpulsecommunity.com", "aT0QWXZt5CcEdLTFxLjiVB");//Logs into the email server with the username and password.
                 try
                 {
                     smtp.Send(email);
+
+                    // Don't forget to store this verification code somewhere
+                    // (database, cache, etc.) so you can verify it when the user enters it
+                    // Example: SaveVerificationCode(model.Mail, verificationCode);
+
                 }
                 catch (Exception e)
                 {
@@ -86,9 +129,7 @@ namespace SocialPulseCommunityWeb.Controllers.authentification
                 {
                     smtp.Disconnect(true);
                 }
-
             }
-                
 
             object result =new { HasError = hasError, Html =CreateUserHelper.Step1(model)};
             return Json(result);
@@ -99,7 +140,21 @@ namespace SocialPulseCommunityWeb.Controllers.authentification
         public IActionResult NextStep2(UserModel model)
         {
             bool hasError = false;
+            // Debug: Print the stored and entered verification codes
+            Console.WriteLine("Stored Verification Code: " + model.verificationCode);
+            Console.WriteLine("Entered Verification Code: " + model.Confirm);
+            if (string.IsNullOrEmpty(model.Confirm ))
+            {
+                model.ConfirmError = "Verification code is missing.";
+                hasError = true;
+            }
+            if (model.Confirm.Trim() != model.verificationCode.Trim())
+            {
+                model.ConfirmError = "Incorrect verification code.";
+                hasError = true;
+            }
             
+
 
 
             object result = new { HasError = hasError, Html = CreateUserHelper.Step2(model) };

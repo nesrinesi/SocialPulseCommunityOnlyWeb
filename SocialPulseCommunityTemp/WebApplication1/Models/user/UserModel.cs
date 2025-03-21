@@ -9,9 +9,8 @@
         public string Phone { get; set; }
 
         /* Step 2 */
-
-      
         public string Confirm { get; set; }
+        public string verificationCode { get; set; }
 
         /* Step 3 */
         public string Companyname { get; set; }
